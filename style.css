@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url("img/konoha.png"), auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: url("img/konoha.png"), auto;
+}
+
+body {
+  font-family: "Amatic SC", cursive;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  cursor: url("img/konoha.png"), auto;
+}
+
+main {
+  cursor: url("img/konoha.png"), auto;
+  height: 100vh;
+}
+
+.introducao {
+  cursor: url("img/konoha.png"), auto;
+  text-align: center;
+  font-size: large;
+  margin-top: 150px;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+
+.introducao img {
+  cursor: url("img/konoha.png"), auto;
+  width: 500px;
+  margin-top: 50px;
+  margin-bottom: 75px;
+}
+
+.introducao p {
+  cursor: url("img/konoha.png"), auto;
+  font-size: 45px;
+  margin-bottom: 125px;
+}
+
+.galeria {
+  cursor: url("img/konoha.png"), auto;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.galeria h1 {
+  cursor: url("img/konoha.png"), auto;
+  font-size: 5rem;
+  color: #000000;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.galeria img {
+  cursor: url("img/konoha.png"), auto;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border: 10px solid white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  transform: rotate(var(--rotacao));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.galeria img:hover {
+  cursor: url("img/konoha.png"), auto;
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Rotação individual usando CSS custom property (você define direto no HTML) */
+.galeria img:nth-child(2) {
+  --rotacao: -5deg;
+}
+.galeria img:nth-child(3) {
+  --rotacao: 3deg;
+}
+.galeria img:nth-child(4) {
+  --rotacao: -2deg;
+}
+.galeria img:nth-child(5) {
+  --rotacao: 4deg;
+}
+.galeria img:nth-child(6) {
+  --rotacao: -3deg;
+}
+.galeria img:nth-child(7) {
+  --rotacao: 5deg;
+}
+.galeria img:nth-child(8) {
+  --rotacao: -4deg;
+}
+.galeria img:nth-child(9) {
+  --rotacao: 2deg;
+}
+.galeria img:nth-child(10) {
+  --rotacao: -1deg;
+}
+.galeria img:nth-child(11) {
+  --rotacao: 6deg;
+}
+
+.player {
+  cursor: url("img/konoha.png"), auto;
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  white-space: noweap;
+  margin-bottom: 150px;
+}
+
+.player::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.playlist h1 {
+  cursor: url("img/konoha.png"), auto;
+  font-weight: 700;
+  font-size: 5rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.album {
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease;
+  padding: 0;
+  cursor: url("img/konoha.png"), auto;
+}
+
+.album img {
+  cursor: url("img/konoha.png"), auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album:hover img {
+  cursor: url("img/konoha.png"), auto;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.videoplayer h1 {
+  cursor: url("img/konoha.png"), auto;
+  font-weight: 700;
+  font-size: 5rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.carta {
+  cursor: url("img/konoha.png"), auto;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 450px;
+  margin-bottom: 440px;
+}
+
+/* Modal e fundo desfocado */
+.modal {
+  cursor: url("img/konoha.png"), auto;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteúdo do modal */
+.modal-conteudo {
+  cursor: url("img/konoha.png"), auto;
+  position: relative;
+  text-align: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* Imagem expandida */
+.modal-conteudo img {
+  cursor: url("img/konoha.png"), auto;
+  max-width: 100%;
+  max-height: 70vh;
+  border: 20px solid white;
+  box-shadow: 0 0 25px black;
+}
+
+/* Texto da imagem */
+.modal-conteudo p {
+  cursor: url("img/konoha.png"), auto;
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Botão de fechar */
+.fechar {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  cursor: url("img/konoha.png"), auto;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 40px;
+}

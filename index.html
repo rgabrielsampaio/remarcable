@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pro amor da minha vida ❤️</title>
+  </head>
+  <body>
+    <main>
+      <section class="introducao">
+        <img src="img/Nautilus_Render.webp" alt="Nautilus" />
+        <p>
+          Fiz esse site aqui com muito carinho pra demonstrar um pouco do amor
+          que eu tenho por ti, Gab ❤️
+        </p>
+      </section>
+      <section class="galeria">
+        <h1>Momentos</h1>
+        <img src="img/foto1.jpg" alt="Foto 1" />
+        <img src="img/foto3.jpg" alt="Foto 2" />
+        <img src="img/foto8.jpg" alt="Foto 3" />
+        <img src="img/foto9.jpg" alt="Foto 4" />
+        <img src="img/foto10.jpg" alt="Foto 5" />
+        <img src="img/foto13.jpg" alt="Foto 6" />
+        <img src="img/foto14.jpg" alt="Foto 7" />
+        <img src="img/foto15.jpg" alt="Foto 8" />
+        <img src="img/foto2.jpg" alt="Foto 9" />
+        <img src="img/foto5.jpg" alt="Foto 10" />
+      </section>
+
+      <section class="playlist">
+        <h1>Nossa Rádio</h1>
+        <div class="player">
+          <button
+            class="album"
+            data-musica="musicas/Liniker - Caju (Letra).mp3"
+          >
+            <img
+              src="img/ab67616d0000b2738eb00294c4856633a918e9ce.jpg"
+              alt="Música 1"
+            />
+          </button>
+          <button
+            class="album"
+            data-musica="musicas/Marina Sena - Desmitificar (Visualizer).mp3"
+          >
+            <img src="img/marina.jpg" alt="Música 2" />
+          </button>
+          <button class="album" data-musica="musicas/Frank Ocean - White Ferrari.mp3">
+            <img src="img/blonde.jpg" alt="Música 3" />
+          </button>
+          <button class="album" data-musica="musicas/fuc it i love.mp3">
+            <img src="img/nfr.png" alt="Música 4" />
+          </button>
+          <button class="album" data-musica="musicas/stargirl.mp3">
+            <img src="img/starboy.jpg" alt="Música 5" />
+          </button>
+          <button class="album" data-musica="musicas/Striptease.mp3">
+            <img src="img/eusexua.jpg" alt="Música 6" />
+          </button>
+          <button class="album" data-musica="musicas/Bad Habit.mp3">
+            <img src="img/steve lacy.jpg" alt="Música 7" />
+          </button>
+          <button
+            class="album"
+            data-musica="musicas/Letrux - Coisa Banho de Mar.mp3"
+          >
+            <img src="img/letrux.jpg" alt="Música 8" />
+          </button>
+          <button
+            class="album"
+            data-musica="musicas/WILLOW - run! (Lyrics).mp3"
+          >
+            <img src="img/willow].jpg" alt="Música 9" />
+          </button>
+          <button class="album" data-musica="musicas/lovers rock.mp3">
+            <img src="img/tv girl.jpg" alt="Música 10" />
+          </button>
+        </div>
+
+        <audio id="audio" controls style="display: none"></audio>
+      </section>
+
+      <section class="videoplayer">
+        <h1>Nós</h1>
+        <video src="video/video fofo1.mp4" width="1920" autoplay loop></video>
+      </section>
+
+      <section class="carta">
+        <p>Desde o dia em que eu te conheci tu vem mudando minha vida. <br>Todas as coisas boas que acontecem comigo ficam MIL vezes melhores quando tu tá perto. <br> Te amo pra sempre! <br> Muito obrigado por fazer parte da minha vida ❤️</p>
+      </section>
+
+        <footer>.</footer>
+    </main>
+
+
+
+    <div class="modal" id="modal">
+      <div class="modal-conteudo">
+        <span class="fechar" id="fechar">&times;</span>
+        <img id="imagem-expandida" src="" alt="Imagem expandida" />
+        <p id="descricao-imagem">Descrição da imagem aqui</p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const player = document.querySelector(".player");
+    const imagensGaleria = document.querySelectorAll(".galeria img");
+    const modal = document.getElementById("modal");
+    const imagemExpandida = document.getElementById("imagem-expandida");
+    const descricaoImagem = document.getElementById("descricao-imagem");
+    const fecharModal = document.getElementById("fechar");
+
+    // Clona os álbuns para rolagem infinita
+    const clone = player.innerHTML;
+    player.innerHTML += clone;
+
+    // Scroll infinito
+    const velocidade = 1;
+    setInterval(() => {
+      player.scrollLeft += velocidade;
+      if (player.scrollLeft >= player.scrollWidth / 2) {
+        player.scrollLeft = 0;
+      }
+    }, 20);
+
+    // Escuta cliques em qualquer álbum, mesmo os clonados
+    player.addEventListener("click", (e) => {
+      const botao = e.target.closest(".album");
+      if (botao) {
+        const musica = botao.getAttribute("data-musica");
+        if (!musica) return;
+
+        if (audio.src.includes(musica)) {
+          if (!audio.paused) {
+            audio.pause();
+          } else {
+            audio.play();
+          }
+        } else {
+          audio.src = musica;
+          audio.play();
+        }
+      }
+    });
+    // Mapeie as descrições (nessa ordem das imagens)
+    const descricoes = [
+      "Aquele dia que a gente fez um picnic cheio de coisa industrializada 💖",
+      "Meu aniversário no café 😊☕",
+      "Quando tu ia pro casacor por escolha e não por obrigação kkkk",
+      "Adeus, camisa da Lana :(",
+      "Esse homem maldito q estragou nossa foto grr",
+      "Tu parecendo um macho nessa",
+      "Eu fiquei tão coitado ai vei",
+      "EU AMO ESSA FOTO ❤️",
+      "Nossos filhos q tu jogou no lixão",
+      "Nossa primeira vez no parque :')",
+    ];
+
+    // Ao clicar em uma imagem
+    imagensGaleria.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        imagemExpandida.src = img.src;
+        descricaoImagem.textContent = descricoes[index] || "Sem descrição";
+        modal.style.display = "flex";
+      });
+    });
+
+    // Fechar o modal
+    fecharModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Também fecha se clicar fora da imagem
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</html>
